@@ -1,18 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-import Login from "./pages/Login";
+
+import Auth from "./pages/Auth/Auth";
+import Login from "./pages/Auth/Login/Login";
+import SignUp from "./pages/Auth/SignUp/SignUp";
+import { Toaster } from "./components/ui/toaster";
 
 function App() {
   return (
-    <div className="size-full bg-gradient-to-bl from-blue-500 to-purple-500 flex flex-col justify-center items-center">
+    <div className="size-full ">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Login />} />
+            <Route path="auth" element={<Auth />}>
+              <Route index element={<Navigate replace to="/auth/login" />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<SignUp />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
+      <Toaster />
     </div>
   );
 }

@@ -74,3 +74,14 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+.gradient-background::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
