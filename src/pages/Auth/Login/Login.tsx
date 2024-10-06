@@ -27,7 +27,7 @@ import { useToast } from "@/hooks/use-toast";
 
 function Login() {
   const navigate = useNavigate();
-  const {toast} = useToast();
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof authSchema>>({
     resolver: zodResolver(authSchema),
@@ -42,15 +42,20 @@ function Login() {
       (res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
+        navigate("/");
+        toast({
+          title: "Login Successful!",
+          description: "You have successfully logged in!",
+          variant: "default",
+        });
       },
       () => {
-          toast({
-            title: "Uh oh! Something went wrong.",
-            description: "There was a problem with your request.",
-            variant: "destructive",
-          });
-        };
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          variant: "destructive",
+        });
+      }
     );
   }
 

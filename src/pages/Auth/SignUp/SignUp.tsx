@@ -45,7 +45,12 @@ function SignUp() {
       (res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
+        navigate("/");
+        toast({
+          title: "Account Created!",
+          description: "Your account has been created!",
+          variant: "default",
+        });
       },
       () => {
         toast({

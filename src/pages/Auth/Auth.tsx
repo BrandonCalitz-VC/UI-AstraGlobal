@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Outlet } from "react-router-dom";
-import { z } from "zod";
 
 function Auth() {
   return (
