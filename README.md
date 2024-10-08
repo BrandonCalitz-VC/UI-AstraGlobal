@@ -6,6 +6,9 @@ Video Link: https://youtu.be/oV9KunNa9Ao
 - Login and Signup
 - Transaction creation
 - Transaction viewer
+- Integration with a database (e.g., SQL/NoSQL)
+- RESTful API for communication between backend and frontend
+- Responsive UI for different devices
 
 ## Technologies Used
 - Circle CI
