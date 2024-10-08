@@ -2,6 +2,17 @@
 
 Video Link: https://youtu.be/oV9KunNa9Ao
 
+## Features
+- Login and Signup
+- Transaction creation
+- Transaction viewer
+
+## Technologies Used
+- Circle CI
+- MongoDB
+- Node.js
+- React
+
 ## Project Structure
 This project is split into 2 folders for the frontend and backend. You will need to pull both and run both for the application to work.
 
