@@ -38,10 +38,11 @@ function EmployeeLogin() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof authSchema>) {
-    login(values).then(
-      (res) => {
-        console.log(res);
+  const onSubmit = (values: z.infer<typeof authSchema>) => {
+    const { email, password } = values as { email: string; password: string };
+
+    login({ email, password })
+      .then((res) => {
         localStorage.setItem("token", res.data.token);
         navigate("/employee");
         toast({
@@ -49,16 +50,15 @@ function EmployeeLogin() {
           description: "You have successfully logged in!",
           variant: "default",
         });
-      },
-      () => {
+      })
+      .catch(() => {
         toast({
           title: "Uh oh! Something went wrong.",
           description: "There was a problem with your request.",
           variant: "destructive",
         });
-      }
-    );
-  }
+      });
+  };
 
   return (
     <>

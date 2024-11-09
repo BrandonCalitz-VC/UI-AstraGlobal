@@ -37,9 +37,11 @@ function Login() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof authSchema>) {
-    login(values).then(
-      (res) => {
+  const onSubmit = (values: z.infer<typeof authSchema>) => {
+    const { email, password } = values as { email: string; password: string };
+
+    login({ email, password })
+      .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
         navigate("/");
@@ -48,16 +50,15 @@ function Login() {
           description: "You have successfully logged in!",
           variant: "default",
         });
-      },
-      () => {
+      })
+      .catch(() => {
         toast({
           title: "Uh oh! Something went wrong.",
           description: "There was a problem with your request.",
           variant: "destructive",
         });
-      }
-    );
-  }
+      });
+  };
 
   return (
     <>
