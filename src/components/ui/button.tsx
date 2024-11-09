@@ -19,6 +19,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         special:
           "bg-gradient-to-bl from-blue-500 to-purple-500 text-white font-bold hover:from-blue-600 hover:to-purple-600",
+        employee:
+          "bg-gradient-to-bl from-orange-500 to-yellow-500 text-white font-bold hover:from-orange-600 hover:to-yellow-600",
       },
       size: {
         default: "h-10 px-4 py-2",

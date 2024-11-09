@@ -1,8 +1,9 @@
 # Astra Global UI
 
-Video Link: https://youtu.be/oV9KunNa9Ao
+Video Link: https://yout-u.be/oV9KunNa9Ao
 
 ## Features
+
 - Login and Signup
 - Transaction creation
 - Transaction viewer
@@ -11,14 +12,15 @@ Video Link: https://youtu.be/oV9KunNa9Ao
 - Responsive UI for different devices
 
 ## Technologies Used
+
 - Circle CI
 - MongoDB
 - Node.js
 - React
 
 ## Project Structure
-This project is split into 2 folders for the frontend and backend. You will need to pull both and run both for the application to work.
 
+This project is split into 2 folders for the frontend and backend. You will need to pull both and run both for the application to work.
 
 How to run the application:
 

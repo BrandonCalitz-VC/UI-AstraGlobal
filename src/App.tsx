@@ -12,6 +12,9 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Pay from "./pages/Pay/Pay";
 import TransactionList from "./pages/TransactionList/TransactionList";
 import { QueryClient, QueryClientProvider } from "react-query";
+import EmployeeAuth from "./pages/Employee/Auth/EmployeeAuth";
+import EmployeeLogin from "./pages/Employee/Auth/Login/EmployeeLogin";
+import EmployeeDashboard from "./pages/Employee/Dashboard/EmployeeDashboard";
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,7 +25,7 @@ function App() {
         <UserProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<MainLayout />}>
+              <Route element={<MainLayout />}>
                 <Route path="auth" element={<Auth />}>
                   <Route
                     index
@@ -31,7 +34,18 @@ function App() {
                   <Route path="login" element={<Login />} />
                   <Route path="register" element={<SignUp />} />
                 </Route>
-                <Route path="/" element={<ProtectedRoute />}>
+                <Route path="employee">
+                  <Route path="auth" element={<EmployeeAuth />}>
+                    <Route index element={<Navigate replace to="login" />} />
+                    <Route path="login" element={<EmployeeLogin />} />
+                  </Route>
+                  <Route path="" element={<ProtectedRoute />}>
+                    <Route index element={<EmployeeDashboard />} />
+                    <Route path="pay" element={<Pay />} />
+                    <Route path="transactions" element={<TransactionList />} />
+                  </Route>
+                </Route>
+                <Route element={<ProtectedRoute />}>
                   <Route index element={<Dashboard />} />
                   <Route path="pay" element={<Pay />} />
                   <Route path="transactions" element={<TransactionList />} />

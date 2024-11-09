@@ -43,6 +43,10 @@ const ProtectedRoute = ({ employee }: ProtectedRouteProps) => {
     return <Navigate to="/auth/login" />;
   }
 
+  if (!user.employee && employee) {
+    return <Navigate to="/employee/login" />;
+  }
+
   if (employee && !user.employee) {
     return <Navigate to="/dashboard" />;
   }
