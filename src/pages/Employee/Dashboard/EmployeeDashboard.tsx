@@ -6,8 +6,7 @@ function EmployeeDashboard() {
     <div className="w-full h-full flex flex-col justify-center items-center bg-gray-200">
       <div className="flex space-x-4">
         <NavItem
-          variant="employee"
-          to="/transactions"
+          to="transactions"
           Icon={HiMiniArrowsUpDown}
           title="Transactions"
         />

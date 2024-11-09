@@ -3,7 +3,7 @@ import { transactions } from "@/services/lib/transaction";
 import { DataTable } from "@/components/ui/data-table";
 import { transactionsColumns } from "./components/tansactions.datatable/columns";
 
-function TransactionList() {
+function EmployeeTransactionList() {
   const { data, isLoading } = useQuery("transactions", transactions);
 
   if (isLoading) return <div>Loading...</div>;
@@ -18,4 +18,4 @@ function TransactionList() {
   );
 }
 
-export default TransactionList;
+export default EmployeeTransactionList;

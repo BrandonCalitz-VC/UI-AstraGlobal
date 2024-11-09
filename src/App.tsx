@@ -15,6 +15,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import EmployeeAuth from "./pages/Employee/Auth/EmployeeAuth";
 import EmployeeLogin from "./pages/Employee/Auth/Login/EmployeeLogin";
 import EmployeeDashboard from "./pages/Employee/Dashboard/EmployeeDashboard";
+import EmployeeTransactionList from "./pages/Employee/TransactionList/EmployeeTransactionList";
 
 function App() {
   const queryClient = new QueryClient();
@@ -42,7 +43,10 @@ function App() {
                   <Route path="" element={<ProtectedRoute />}>
                     <Route index element={<EmployeeDashboard />} />
                     <Route path="pay" element={<Pay />} />
-                    <Route path="transactions" element={<TransactionList />} />
+                    <Route
+                      path="transactions"
+                      element={<EmployeeTransactionList />}
+                    />
                   </Route>
                 </Route>
                 <Route element={<ProtectedRoute />}>

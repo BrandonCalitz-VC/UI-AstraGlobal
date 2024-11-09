@@ -9,3 +9,11 @@ export function pay(data: z.infer<typeof paySchema>) {
 export function transactions() {
     return axiosClient.get("/transaction");
 }
+
+export function approve(id: string) {
+    return axiosClient.post("/transaction/approve", { transaction_id: id });
+}
+
+export function decline(id: string) {
+    return axiosClient.post("/transaction/decline", { transaction_id: id });
+}
