@@ -4,20 +4,21 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 function MainLayout() {
   const { user } = useUser();
   const path = useLocation().pathname;
-  const employee = path.includes("employee");
+  const employeePath = path.includes("employee");
+  console.log(user);
 
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-full h-16 bg-white flex items-center justify-between px-4 ">
         <div
           className={`font-bold ${
-            employee ? "text-orange-500" : "text-blue-900"
+            employeePath ? "text-orange-500" : "text-blue-900"
           }`}
         >
           Astra Global
         </div>
         <div className="flex items-center gap-4">
-          {!employee && (
+          {!employeePath && (
             <NavLink
               to="/employee/"
               className=" text-blue-900 hover:text-blue-900 hover:underline"
@@ -25,7 +26,7 @@ function MainLayout() {
               Employee
             </NavLink>
           )}
-          {employee && (
+          {employeePath && (
             <NavLink
               to="/"
               className=" text-orange-500 hover:text-orange-500 hover:underline"
@@ -33,11 +34,23 @@ function MainLayout() {
               Account Holder
             </NavLink>
           )}
+          {user?.employee && employeePath && (
+            <NavLink
+              to="/employee/add-employee"
+              className={`${
+                employeePath
+                  ? "text-orange-500 hover:text-orange-500"
+                  : "text-blue-900 hover:text-blue-900"
+              } hover:underline`}
+            >
+              Add Employee
+            </NavLink>
+          )}
           {user && (
             <NavLink
-              to={!employee ? "/" : "/employee/"}
+              to={!employeePath ? "/" : "/employee/"}
               className={`${
-                employee
+                employeePath
                   ? "text-orange-500 hover:text-orange-500"
                   : "text-blue-900 hover:text-blue-900"
               } hover:underline`}

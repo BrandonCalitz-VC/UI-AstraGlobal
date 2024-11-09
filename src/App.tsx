@@ -16,6 +16,7 @@ import EmployeeAuth from "./pages/Employee/Auth/EmployeeAuth";
 import EmployeeLogin from "./pages/Employee/Auth/Login/EmployeeLogin";
 import EmployeeDashboard from "./pages/Employee/Dashboard/EmployeeDashboard";
 import EmployeeTransactionList from "./pages/Employee/TransactionList/EmployeeTransactionList";
+import AddEmployee from "./pages/Employee/AddEmployee/AddEmployee";
 
 function App() {
   const queryClient = new QueryClient();
@@ -42,11 +43,11 @@ function App() {
                   </Route>
                   <Route path="" element={<ProtectedRoute />}>
                     <Route index element={<EmployeeDashboard />} />
-                    <Route path="pay" element={<Pay />} />
                     <Route
                       path="transactions"
                       element={<EmployeeTransactionList />}
                     />
+                    <Route path="add-employee" element={<AddEmployee />} />
                   </Route>
                 </Route>
                 <Route element={<ProtectedRoute />}>

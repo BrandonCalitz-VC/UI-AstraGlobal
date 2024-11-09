@@ -17,7 +17,7 @@ const ProtectedRoute = ({ employee }: ProtectedRouteProps) => {
       if (!user && localStorage.getItem("token")) {
         try {
           const res = await getUserInfo();
-          setUser(res.data);
+          setUser(res.data.user);
         } catch {
           toast({
             title: "Uh oh! Something went wrong.",

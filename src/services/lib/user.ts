@@ -9,8 +9,20 @@ export function register(data: {
   last_name: string;
   email: string;
   password: string;
+  national_id: string;
+  account_number: string;
+  bank: string;
 }) {
   return axiosClient.post("/user/register", data);
+}
+export function addEmployee(data: {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+  national_id: string;
+}) {
+  return axiosClient.post("/user/employee", data);
 }
 
 export function getUserInfo() {
