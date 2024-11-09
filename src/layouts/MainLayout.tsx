@@ -19,7 +19,7 @@ function MainLayout() {
         <div className="flex items-center gap-4">
           {!employee && (
             <NavLink
-              to="/employee/auth/login"
+              to="/employee/"
               className=" text-blue-900 hover:text-blue-900 hover:underline"
             >
               Employee
@@ -27,7 +27,7 @@ function MainLayout() {
           )}
           {employee && (
             <NavLink
-              to="/auth/login"
+              to="/"
               className=" text-orange-500 hover:text-orange-500 hover:underline"
             >
               Account Holder
@@ -35,7 +35,7 @@ function MainLayout() {
           )}
           {user && (
             <NavLink
-              to="/"
+              to={!employee ? "/" : "/employee/"}
               className={`${
                 employee
                   ? "text-orange-500 hover:text-orange-500"
