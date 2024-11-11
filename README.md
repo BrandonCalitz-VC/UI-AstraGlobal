@@ -4,6 +4,16 @@ Video Link: [https://yout-u.be/oV9KunNa9Ao](https://youtu.be/c5ply1Eu5g4)
 
 ## Features
 
+### Final Poe Additons
+- Password Hashing
+- Employee Login and Add
+- Emplloyee Transaction management
+- Additinal Security And testing has been added
+- Secured over SSL usinfg HTTPS
+- Used Regex patterns
+- CirclCi pipeline is set up to run sonar-cube scan
+
+### Additonal Features
 - Login and Signup
 - Transaction creation
 - Transaction viewer
@@ -12,7 +22,8 @@ Video Link: [https://yout-u.be/oV9KunNa9Ao](https://youtu.be/c5ply1Eu5g4)
 - Responsive UI for different devices
 
 ## Technologies Used
-
+- RegEx
+- Sonar-cube
 - Circle CI
 - MongoDB
 - Node.js
