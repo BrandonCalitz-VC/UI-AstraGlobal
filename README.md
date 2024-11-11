@@ -1,6 +1,6 @@
 # Astra Global UI
 
-Video Link: https://yout-u.be/oV9KunNa9Ao
+Video Link: [https://yout-u.be/oV9KunNa9Ao](https://youtu.be/c5ply1Eu5g4)
 
 ## Features
 
